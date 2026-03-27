@@ -1,0 +1,1625 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-03-27",
+    "server": "VN",
+    "totalPlayers": 36,
+    "seasonCurrent": 2026,
+    "seasonPrevious": 2025
+  },
+  "players": [
+    {
+      "id": 1,
+      "name": "Sinnnnn",
+      "team": "tpcoms36",
+      "opggUrl": "https://www.op.gg/summoners/vn/Sinnnnn-1108",
+      "seasons": {
+        "2026": {
+          "rank": "Emerald 3",
+          "rankClass": "rank-emerald",
+          "champions": [
+            {
+              "name": "Zoe",
+              "iconName": "Zoe",
+              "kda": 3.0,
+              "kdaClass": "kda-good",
+              "games": 54,
+              "wins": 32,
+              "losses": 22,
+              "winrate": 59
+            },
+            {
+              "name": "Miss Fortune",
+              "iconName": "MissFortune",
+              "kda": 2.54,
+              "kdaClass": "kda-avg",
+              "games": 24,
+              "wins": 12,
+              "losses": 12,
+              "winrate": 50
+            },
+            {
+              "name": "Jinx",
+              "iconName": "Jinx",
+              "kda": 2.45,
+              "kdaClass": "kda-avg",
+              "games": 12,
+              "wins": 6,
+              "losses": 6,
+              "winrate": 50
+            }
+          ],
+          "overallWr": 50,
+          "overallWrRecord": "85W 84L",
+          "overallWrClass": "wr-mid",
+          "mastery": [
+            { "name": "Zoe", "points": "475K" },
+            { "name": "Thresh", "points": "434K" },
+            { "name": "Jinx", "points": "404K" }
+          ],
+          "level": 878
+        },
+        "2025": {
+          "rank": "Emerald 4",
+          "rankClass": "rank-emerald",
+          "champions": [
+            {
+              "name": "Zoe",
+              "iconName": "Zoe",
+              "kda": 3.2,
+              "kdaClass": "kda-good",
+              "games": 42,
+              "wins": 25,
+              "losses": 17,
+              "winrate": 60
+            },
+            {
+              "name": "Jinx",
+              "iconName": "Jinx",
+              "kda": 2.8,
+              "kdaClass": "kda-avg",
+              "games": 18,
+              "wins": 9,
+              "losses": 9,
+              "winrate": 50
+            },
+            {
+              "name": "Miss Fortune",
+              "iconName": "MissFortune",
+              "kda": 2.6,
+              "kdaClass": "kda-avg",
+              "games": 15,
+              "wins": 8,
+              "losses": 7,
+              "winrate": 53
+            }
+          ],
+          "overallWr": 54,
+          "overallWrRecord": "75W 65L",
+          "overallWrClass": "wr-mid",
+          "mastery": [
+            { "name": "Zoe", "points": "440K" },
+            { "name": "Thresh", "points": "390K" },
+            { "name": "Jinx", "points": "350K" }
+          ]
+        }
+      }
+    },
+    {
+      "id": 2,
+      "name": "ChuanTT",
+      "team": "tpcoms36",
+      "opggUrl": "https://www.op.gg/summoners/vn/ChuanTT-1916",
+      "seasons": {
+        "2026": {
+          "rank": "Unranked",
+          "rankClass": "rank-unranked",
+          "champions": [
+            {
+              "name": "Sylas",
+              "iconName": "Sylas",
+              "kda": 2.04,
+              "kdaClass": "kda-avg",
+              "games": 36,
+              "wins": 18,
+              "losses": 18,
+              "winrate": 50
+            },
+            {
+              "name": "Ashe",
+              "iconName": "Ashe",
+              "kda": 2.31,
+              "kdaClass": "kda-avg",
+              "games": 24,
+              "wins": 12,
+              "losses": 12,
+              "winrate": 50
+            },
+            {
+              "name": "Master Yi",
+              "iconName": "MasterYi",
+              "kda": 1.69,
+              "kdaClass": "kda-bad",
+              "games": 14,
+              "wins": 7,
+              "losses": 7,
+              "winrate": 50
+            }
+          ],
+          "overallWr": 50,
+          "overallWrRecord": "Sylas main",
+          "overallWrClass": "wr-mid",
+          "mastery": [
+            { "name": "Sylas", "points": "196K" },
+            { "name": "Brand", "points": "65K" },
+            { "name": "Yasuo", "points": "38K" }
+          ],
+          "level": 110
+        },
+        "2025": {
+          "rank": "Gold 3 (Flex)",
+          "rankClass": "rank-gold",
+          "champions": [
+            {
+              "name": "Sylas",
+              "iconName": "Sylas",
+              "kda": 2.1,
+              "kdaClass": "kda-avg",
+              "games": 30,
+              "wins": 15,
+              "losses": 15,
+              "winrate": 50
+            },
+            {
+              "name": "Ashe",
+              "iconName": "Ashe",
+              "kda": 2.0,
+              "kdaClass": "kda-avg",
+              "games": 12,
+              "wins": 6,
+              "losses": 6,
+              "winrate": 50
+            }
+          ],
+          "overallWr": 50,
+          "overallWrRecord": "25W 25L",
+          "overallWrClass": "wr-mid",
+          "mastery": [
+            { "name": "Sylas", "points": "180K" },
+            { "name": "Brand", "points": "55K" },
+            { "name": "Yasuo", "points": "32K" }
+          ]
+        }
+      }
+    },
+    {
+      "id": 3,
+      "name": "Mikan",
+      "team": "tpcoms36",
+      "opggUrl": "https://www.op.gg/summoners/vn/Mikan-1227",
+      "seasons": {
+        "2026": {
+          "rank": "Unranked",
+          "rankClass": "rank-unranked",
+          "champions": [
+            {
+              "name": "Fiora",
+              "iconName": "Fiora",
+              "kda": 5.0,
+              "kdaClass": "kda-good",
+              "games": 1,
+              "wins": 1,
+              "losses": 0,
+              "winrate": 100
+            }
+          ],
+          "overallWr": 100,
+          "overallWrRecord": "1W 0L",
+          "overallWrClass": "wr-high",
+          "mastery": [
+            { "name": "Fiora", "points": "784K" },
+            { "name": "Yasuo", "points": "334K" },
+            { "name": "Zed", "points": "250K" }
+          ],
+          "level": 540
+        },
+        "2025": {
+          "rank": "Gold 3",
+          "rankClass": "rank-gold",
+          "champions": [
+            {
+              "name": "Fiora",
+              "iconName": "Fiora",
+              "kda": 4.5,
+              "kdaClass": "kda-good",
+              "games": 8,
+              "wins": 5,
+              "losses": 3,
+              "winrate": 63
+            },
+            {
+              "name": "Yasuo",
+              "iconName": "Yasuo",
+              "kda": 3.0,
+              "kdaClass": "kda-good",
+              "games": 5,
+              "wins": 3,
+              "losses": 2,
+              "winrate": 60
+            }
+          ],
+          "overallWr": 55,
+          "overallWrRecord": "22W 18L",
+          "overallWrClass": "wr-mid",
+          "mastery": [
+            { "name": "Fiora", "points": "720K" },
+            { "name": "Yasuo", "points": "310K" },
+            { "name": "Zed", "points": "228K" }
+          ]
+        }
+      }
+    },
+    {
+      "id": 4,
+      "name": "Yang Yang Yang",
+      "team": "tpcoms36",
+      "opggUrl": "https://www.op.gg/summoners/vn/Yang%20Yang%20Yang-5971",
+      "seasons": {
+        "2026": {
+          "rank": "Unranked",
+          "rankClass": "rank-unranked",
+          "champions": [
+            {
+              "name": "Nocturne",
+              "iconName": "Nocturne",
+              "kda": 3.2,
+              "kdaClass": "kda-good",
+              "games": 2,
+              "wins": 1,
+              "losses": 1,
+              "winrate": 50
+            },
+            {
+              "name": "Jarvan IV",
+              "iconName": "JarvanIV",
+              "kda": 2.5,
+              "kdaClass": "kda-avg",
+              "games": 1,
+              "wins": 1,
+              "losses": 0,
+              "winrate": 100
+            }
+          ],
+          "overallWr": 50,
+          "overallWrRecord": "2W 2L",
+          "overallWrClass": "wr-mid",
+          "mastery": [
+            { "name": "Riven", "points": "306K" },
+            { "name": "Yasuo", "points": "201K" },
+            { "name": "Lee Sin", "points": "192K" }
+          ],
+          "level": 415
+        },
+        "2025": {
+          "rank": "Silver 1",
+          "rankClass": "rank-silver",
+          "champions": [
+            {
+              "name": "Riven",
+              "iconName": "Riven",
+              "kda": 2.8,
+              "kdaClass": "kda-avg",
+              "games": 12,
+              "wins": 6,
+              "losses": 6,
+              "winrate": 50
+            },
+            {
+              "name": "Nocturne",
+              "iconName": "Nocturne",
+              "kda": 2.5,
+              "kdaClass": "kda-avg",
+              "games": 8,
+              "wins": 4,
+              "losses": 4,
+              "winrate": 50
+            }
+          ],
+          "overallWr": 47,
+          "overallWrRecord": "38W 43L",
+          "overallWrClass": "wr-low",
+          "mastery": [
+            { "name": "Riven", "points": "280K" },
+            { "name": "Yasuo", "points": "185K" },
+            { "name": "Lee Sin", "points": "170K" }
+          ]
+        }
+      }
+    },
+    {
+      "id": 5,
+      "name": "Rentie",
+      "team": "tpcoms36",
+      "opggUrl": "https://www.op.gg/summoners/vn/Rentie-V4G",
+      "seasons": {
+        "2026": {
+          "rank": "Emerald 3",
+          "rankClass": "rank-emerald",
+          "champions": [
+            {
+              "name": "Ryze",
+              "iconName": "Ryze",
+              "kda": 3.2,
+              "kdaClass": "kda-good",
+              "games": 23,
+              "wins": 12,
+              "losses": 11,
+              "winrate": 52
+            },
+            {
+              "name": "Sylas",
+              "iconName": "Sylas",
+              "kda": 2.95,
+              "kdaClass": "kda-avg",
+              "games": 14,
+              "wins": 7,
+              "losses": 7,
+              "winrate": 50
+            },
+            {
+              "name": "Malphite",
+              "iconName": "Malphite",
+              "kda": 2.25,
+              "kdaClass": "kda-avg",
+              "games": 7,
+              "wins": 4,
+              "losses": 3,
+              "winrate": 57
+            }
+          ],
+          "overallWr": 51,
+          "overallWrRecord": "20W 19L",
+          "overallWrClass": "wr-mid",
+          "mastery": [
+            { "name": "Akali", "points": "290K" },
+            { "name": "Sylas", "points": "282K" },
+            { "name": "Ezreal", "points": "247K" }
+          ],
+          "level": 601
+        },
+        "2025": {
+          "rank": "Platinum 1",
+          "rankClass": "rank-platinum",
+          "champions": [
+            {
+              "name": "Ryze",
+              "iconName": "Ryze",
+              "kda": 3.0,
+              "kdaClass": "kda-good",
+              "games": 18,
+              "wins": 10,
+              "losses": 8,
+              "winrate": 56
+            },
+            {
+              "name": "Sylas",
+              "iconName": "Sylas",
+              "kda": 2.7,
+              "kdaClass": "kda-avg",
+              "games": 12,
+              "wins": 6,
+              "losses": 6,
+              "winrate": 50
+            },
+            {
+              "name": "Malphite",
+              "iconName": "Malphite",
+              "kda": 2.4,
+              "kdaClass": "kda-avg",
+              "games": 8,
+              "wins": 5,
+              "losses": 3,
+              "winrate": 63
+            }
+          ],
+          "overallWr": 52,
+          "overallWrRecord": "65W 60L",
+          "overallWrClass": "wr-mid",
+          "mastery": [
+            { "name": "Akali", "points": "260K" },
+            { "name": "Sylas", "points": "240K" },
+            { "name": "Ezreal", "points": "210K" }
+          ]
+        }
+      }
+    },
+    {
+      "id": 6,
+      "name": "Hương Tạ Vl",
+      "team": "tpcoms36",
+      "opggUrl": "https://www.op.gg/summoners/vn/H%C6%B0ng%20T%E1%BA%A1%20Vl-VN2",
+      "seasons": {
+        "2026": {
+          "rank": "--",
+          "rankClass": "rank-unranked",
+          "champions": [],
+          "overallWr": "--",
+          "mastery": []
+        },
+        "2025": {
+          "rank": "Silver 2",
+          "rankClass": "rank-silver",
+          "champions": [
+            {
+              "name": "Aphelios",
+              "iconName": "Aphelios",
+              "kda": 2.45,
+              "kdaClass": "kda-avg",
+              "games": 20,
+              "wins": 10,
+              "losses": 10,
+              "winrate": 50
+            }
+          ],
+          "overallWr": 48,
+          "overallWrRecord": "35W 38L",
+          "overallWrClass": "wr-low",
+          "mastery": [{ "name": "Aphelios", "points": "210K" }]
+        }
+      }
+    },
+    {
+      "id": 7,
+      "name": "The Best AD",
+      "team": "fanj97",
+      "opggUrl": "https://www.op.gg/summoners/vn/The%20Best%20AD%20-VN2",
+      "seasons": {
+        "2026": {
+          "rank": "Bronze 3",
+          "rankClass": "rank-bronze",
+          "champions": [
+            {
+              "name": "Xerath",
+              "iconName": "Xerath",
+              "kda": 2.27,
+              "kdaClass": "kda-avg",
+              "games": 5,
+              "wins": 2,
+              "losses": 3,
+              "winrate": 40
+            },
+            {
+              "name": "Lux",
+              "iconName": "Lux",
+              "kda": 1.75,
+              "kdaClass": "kda-bad",
+              "games": 2,
+              "wins": 0,
+              "losses": 2,
+              "winrate": 0
+            },
+            {
+              "name": "Darius",
+              "iconName": "Darius",
+              "kda": 2.17,
+              "kdaClass": "kda-avg",
+              "games": 1,
+              "wins": 0,
+              "losses": 1,
+              "winrate": 0
+            }
+          ],
+          "overallWr": 29,
+          "overallWrRecord": "5W 12L",
+          "overallWrClass": "wr-low",
+          "mastery": [
+            { "name": "Yasuo", "points": "386K" },
+            { "name": "Lee Sin", "points": "236K" },
+            { "name": "Jinx", "points": "145K" }
+          ],
+          "level": 293
+        },
+        "2025": {
+          "rank": "Iron 1",
+          "rankClass": "rank-iron",
+          "champions": [
+            {
+              "name": "Yasuo",
+              "iconName": "Yasuo",
+              "kda": 1.8,
+              "kdaClass": "kda-bad",
+              "games": 25,
+              "wins": 8,
+              "losses": 17,
+              "winrate": 32
+            },
+            {
+              "name": "Xerath",
+              "iconName": "Xerath",
+              "kda": 2.1,
+              "kdaClass": "kda-avg",
+              "games": 10,
+              "wins": 4,
+              "losses": 6,
+              "winrate": 40
+            }
+          ],
+          "overallWr": 35,
+          "overallWrRecord": "25W 46L",
+          "overallWrClass": "wr-low",
+          "mastery": [
+            { "name": "Yasuo", "points": "340K" },
+            { "name": "Lee Sin", "points": "210K" },
+            { "name": "Jinx", "points": "130K" }
+          ]
+        }
+      }
+    },
+    {
+      "id": 8,
+      "name": "Xúc xích có kemm",
+      "team": "fanj97",
+      "opggUrl": "https://www.op.gg/summoners/vn/X%C3%BAc%20x%C3%ADch%20c%C3%B3%20kemm%20-vn2",
+      "seasons": {
+        "2026": {
+          "rank": "Emerald 4",
+          "rankClass": "rank-emerald",
+          "champions": [
+            {
+              "name": "Aatrox",
+              "iconName": "Aatrox",
+              "kda": 1.72,
+              "kdaClass": "kda-bad",
+              "games": 19,
+              "wins": 9,
+              "losses": 10,
+              "winrate": 47
+            },
+            {
+              "name": "Kha'Zix",
+              "iconName": "Khazix",
+              "kda": 2.6,
+              "kdaClass": "kda-avg",
+              "games": 9,
+              "wins": 7,
+              "losses": 2,
+              "winrate": 78
+            },
+            {
+              "name": "Jhin",
+              "iconName": "Jhin",
+              "kda": 3.78,
+              "kdaClass": "kda-good",
+              "games": 8,
+              "wins": 6,
+              "losses": 2,
+              "winrate": 75
+            },
+            {
+              "name": "Pantheon",
+              "iconName": "Pantheon",
+              "kda": 2.51,
+              "kdaClass": "kda-avg",
+              "games": 8,
+              "wins": 5,
+              "losses": 3,
+              "winrate": 63
+            }
+          ],
+          "overallWr": 53,
+          "overallWrRecord": "63W 55L",
+          "overallWrClass": "wr-mid",
+          "mastery": [
+            { "name": "Kha'Zix", "points": "571K" },
+            { "name": "Twisted Fate", "points": "416K" },
+            { "name": "Graves", "points": "388K" }
+          ]
+        },
+        "2025": {
+          "rank": "Platinum 4",
+          "rankClass": "rank-platinum",
+          "champions": [
+            {
+              "name": "Garen",
+              "iconName": "Garen",
+              "kda": 1.95,
+              "kdaClass": "kda-bad",
+              "games": 28,
+              "wins": 10,
+              "losses": 18,
+              "winrate": 36
+            },
+            {
+              "name": "Lee Sin",
+              "iconName": "LeeSin",
+              "kda": 2.15,
+              "kdaClass": "kda-avg",
+              "games": 16,
+              "wins": 8,
+              "losses": 8,
+              "winrate": 50
+            },
+            {
+              "name": "Kha'Zix",
+              "iconName": "Khazix",
+              "kda": 2.45,
+              "kdaClass": "kda-avg",
+              "games": 14,
+              "wins": 8,
+              "losses": 6,
+              "winrate": 57
+            }
+          ],
+          "overallWr": 42,
+          "overallWrRecord": "42W 58L",
+          "overallWrClass": "wr-low",
+          "mastery": [
+            { "name": "Garen", "points": "280K" },
+            { "name": "Lee Sin", "points": "180K" },
+            { "name": "Kha'Zix", "points": "140K" }
+          ]
+        }
+      }
+    },
+    {
+      "id": 9,
+      "name": "Chỉ yêu mình ems",
+      "team": "fanj97",
+      "opggUrl": "https://www.op.gg/summoners/vn/Ch%E1%BB%89%20y%C3%AAu%20m%C3%ACnh%20ems%20-0804",
+      "seasons": {
+        "2026": {
+          "rank": "Unranked",
+          "rankClass": "rank-unranked",
+          "champions": [],
+          "overallWr": "--",
+          "mastery": []
+        },
+        "2025": {
+          "rank": "Emerald 3",
+          "rankClass": "rank-emerald",
+          "champions": [
+            {
+              "name": "Jhin",
+              "iconName": "Jhin",
+              "kda": 2.85,
+              "kdaClass": "kda-avg",
+              "games": 32,
+              "wins": 16,
+              "losses": 16,
+              "winrate": 50
+            },
+            {
+              "name": "Ezreal",
+              "iconName": "Ezreal",
+              "kda": 2.65,
+              "kdaClass": "kda-avg",
+              "games": 28,
+              "wins": 15,
+              "losses": 13,
+              "winrate": 54
+            },
+            {
+              "name": "Lee Sin",
+              "iconName": "LeeSin",
+              "kda": 2.4,
+              "kdaClass": "kda-avg",
+              "games": 22,
+              "wins": 11,
+              "losses": 11,
+              "winrate": 50
+            }
+          ],
+          "overallWr": 51,
+          "overallWrRecord": "58W 56L",
+          "overallWrClass": "wr-mid",
+          "mastery": [
+            { "name": "Jhin", "points": "378K" },
+            { "name": "Ezreal", "points": "348K" },
+            { "name": "Lee Sin", "points": "336K" }
+          ]
+        }
+      }
+    },
+    {
+      "id": 10,
+      "name": "VANH DỌN LÚA",
+      "team": "fanj97",
+      "opggUrl": "https://www.op.gg/summoners/vn/VANH%20D%E1%BB%8CN%20L%C3%9AA%20-A1CKM",
+      "seasons": {
+        "2026": {
+          "rank": "Unranked",
+          "rankClass": "rank-unranked",
+          "champions": [],
+          "overallWr": "--",
+          "mastery": []
+        },
+        "2025": {
+          "rank": "Silver 3",
+          "rankClass": "rank-silver",
+          "champions": [
+            {
+              "name": "Nautilus",
+              "iconName": "Nautilus",
+              "kda": 3.94,
+              "kdaClass": "kda-good",
+              "games": 3,
+              "wins": 2,
+              "losses": 1,
+              "winrate": 67
+            },
+            {
+              "name": "Yasuo",
+              "iconName": "Yasuo",
+              "kda": 2.3,
+              "kdaClass": "kda-avg",
+              "games": 8,
+              "wins": 4,
+              "losses": 4,
+              "winrate": 50
+            },
+            {
+              "name": "Jhin",
+              "iconName": "Jhin",
+              "kda": 2.1,
+              "kdaClass": "kda-avg",
+              "games": 6,
+              "wins": 3,
+              "losses": 3,
+              "winrate": 50
+            }
+          ],
+          "overallWr": 49,
+          "overallWrRecord": "22W 23L",
+          "overallWrClass": "wr-low",
+          "mastery": [
+            { "name": "Yasuo", "points": "263K" },
+            { "name": "Jhin", "points": "165K" },
+            { "name": "Nautilus", "points": "122K" }
+          ]
+        }
+      }
+    },
+    {
+      "id": 11,
+      "name": "Thêm Mì Cay",
+      "team": "fanj97",
+      "opggUrl": "https://www.op.gg/summoners/vn/Th%C3%A8m%20M%C3%AC%20Cay-6498",
+      "seasons": {
+        "2026": {
+          "rank": "Unranked",
+          "rankClass": "rank-unranked",
+          "champions": [],
+          "overallWr": "--",
+          "mastery": []
+        },
+        "2025": {
+          "rank": "Platinum 4",
+          "rankClass": "rank-platinum",
+          "champions": [
+            {
+              "name": "Thresh",
+              "iconName": "Thresh",
+              "kda": 2.45,
+              "kdaClass": "kda-avg",
+              "games": 20,
+              "wins": 10,
+              "losses": 10,
+              "winrate": 50
+            },
+            {
+              "name": "Ornn",
+              "iconName": "Ornn",
+              "kda": 2.15,
+              "kdaClass": "kda-avg",
+              "games": 15,
+              "wins": 8,
+              "losses": 7,
+              "winrate": 53
+            },
+            {
+              "name": "Jinx",
+              "iconName": "Jinx",
+              "kda": 2.3,
+              "kdaClass": "kda-avg",
+              "games": 12,
+              "wins": 6,
+              "losses": 6,
+              "winrate": 50
+            }
+          ],
+          "overallWr": 48,
+          "overallWrRecord": "35W 37L",
+          "overallWrClass": "wr-low",
+          "mastery": [
+            { "name": "Thresh", "points": "398K" },
+            { "name": "Ornn", "points": "125K" },
+            { "name": "Jinx", "points": "162K" }
+          ]
+        }
+      }
+    },
+    {
+      "id": 12,
+      "name": "PDNghyax3nghya",
+      "team": "fanj97",
+      "opggUrl": "https://www.op.gg/summoners/vn/PDNghyax3nghya-VN2",
+      "seasons": {
+        "2026": {
+          "rank": "--",
+          "rankClass": "rank-unranked",
+          "champions": [],
+          "overallWr": "--",
+          "mastery": []
+        },
+        "2025": {
+          "rank": "Bronze 1",
+          "rankClass": "rank-bronze",
+          "champions": [
+            {
+              "name": "Gangplank",
+              "iconName": "Gangplank",
+              "kda": 2.15,
+              "kdaClass": "kda-avg",
+              "games": 18,
+              "wins": 7,
+              "losses": 11,
+              "winrate": 39
+            }
+          ],
+          "overallWr": 40,
+          "overallWrRecord": "25W 37L",
+          "overallWrClass": "wr-low",
+          "mastery": [{ "name": "Gangplank", "points": "150K" }]
+        }
+      }
+    },
+    {
+      "id": 13,
+      "name": "Coldchew",
+      "team": "ubck",
+      "opggUrl": "https://www.op.gg/summoners/vn/Coldchew-vn2",
+      "seasons": {
+        "2026": {
+          "rank": "Unranked",
+          "rankClass": "rank-unranked",
+          "champions": [
+            {
+              "name": "Graves",
+              "iconName": "Graves",
+              "kda": 2.14,
+              "kdaClass": "kda-avg",
+              "games": 1,
+              "wins": 0,
+              "losses": 1,
+              "winrate": 0
+            }
+          ],
+          "overallWr": 0,
+          "overallWrRecord": "0W 1L",
+          "overallWrClass": "wr-low",
+          "mastery": [
+            { "name": "Ekko", "points": "115K" },
+            { "name": "Graves", "points": "99K" },
+            { "name": "Master Yi", "points": "40K" }
+          ],
+          "level": 169
+        },
+        "2025": {
+          "rank": "Emerald 1",
+          "rankClass": "rank-emerald",
+          "champions": [
+            {
+              "name": "Graves",
+              "iconName": "Graves",
+              "kda": 2.8,
+              "kdaClass": "kda-avg",
+              "games": 45,
+              "wins": 26,
+              "losses": 19,
+              "winrate": 58
+            },
+            {
+              "name": "Ekko",
+              "iconName": "Ekko",
+              "kda": 3.1,
+              "kdaClass": "kda-good",
+              "games": 30,
+              "wins": 18,
+              "losses": 12,
+              "winrate": 60
+            }
+          ],
+          "overallWr": 58,
+          "overallWrRecord": "85W 62L",
+          "overallWrClass": "wr-high",
+          "mastery": [
+            { "name": "Ekko", "points": "105K" },
+            { "name": "Graves", "points": "88K" },
+            { "name": "Master Yi", "points": "36K" }
+          ]
+        }
+      }
+    },
+    {
+      "id": 14,
+      "name": "M H 301",
+      "team": "ubck",
+      "opggUrl": "https://www.op.gg/summoners/vn/M%20H%20301-301",
+      "seasons": {
+        "2026": {
+          "rank": "Unranked",
+          "rankClass": "rank-unranked",
+          "champions": [
+            {
+              "name": "Kai'Sa",
+              "iconName": "Kaisa",
+              "kda": 3.92,
+              "kdaClass": "kda-good",
+              "games": 3,
+              "wins": 2,
+              "losses": 1,
+              "winrate": 67
+            },
+            {
+              "name": "Ezreal",
+              "iconName": "Ezreal",
+              "kda": 3.5,
+              "kdaClass": "kda-good",
+              "games": 1,
+              "wins": 1,
+              "losses": 0,
+              "winrate": 100
+            }
+          ],
+          "overallWr": 64,
+          "overallWrRecord": "7W 4L recent",
+          "overallWrClass": "wr-high",
+          "mastery": [
+            { "name": "Ezreal", "points": "196K" },
+            { "name": "Kai'Sa", "points": "164K" },
+            { "name": "Jax", "points": "160K" }
+          ],
+          "level": 528
+        },
+        "2025": {
+          "rank": "Platinum 3",
+          "rankClass": "rank-platinum",
+          "champions": [
+            {
+              "name": "Kai'Sa",
+              "iconName": "Kaisa",
+              "kda": 3.5,
+              "kdaClass": "kda-good",
+              "games": 25,
+              "wins": 15,
+              "losses": 10,
+              "winrate": 60
+            },
+            {
+              "name": "Ezreal",
+              "iconName": "Ezreal",
+              "kda": 3.2,
+              "kdaClass": "kda-good",
+              "games": 20,
+              "wins": 12,
+              "losses": 8,
+              "winrate": 60
+            }
+          ],
+          "overallWr": 56,
+          "overallWrRecord": "55W 43L",
+          "overallWrClass": "wr-mid",
+          "mastery": [
+            { "name": "Ezreal", "points": "165K" },
+            { "name": "Kai'Sa", "points": "140K" },
+            { "name": "Jax", "points": "145K" }
+          ]
+        }
+      }
+    },
+    {
+      "id": 15,
+      "name": "AVG Enel",
+      "team": "ubck",
+      "opggUrl": "https://www.op.gg/summoners/vn/AVG%20Enel-vn2",
+      "seasons": {
+        "2026": {
+          "rank": "--",
+          "rankClass": "rank-unranked",
+          "champions": [],
+          "overallWr": "--",
+          "mastery": []
+        },
+        "2025": {
+          "rank": "Gold 2",
+          "rankClass": "rank-gold",
+          "champions": [
+            {
+              "name": "Vladimir",
+              "iconName": "Vladimir",
+              "kda": 2.65,
+              "kdaClass": "kda-avg",
+              "games": 19,
+              "wins": 10,
+              "losses": 9,
+              "winrate": 53
+            }
+          ],
+          "overallWr": 51,
+          "overallWrRecord": "45W 43L",
+          "overallWrClass": "wr-mid",
+          "mastery": [{ "name": "Vladimir", "points": "220K" }]
+        }
+      }
+    },
+    {
+      "id": 16,
+      "name": "FacherND001",
+      "team": "ubck",
+      "opggUrl": "https://www.op.gg/summoners/vn/FacherND001-vn2",
+      "seasons": {
+        "2026": {
+          "rank": "--",
+          "rankClass": "rank-unranked",
+          "champions": [],
+          "overallWr": "--",
+          "mastery": []
+        },
+        "2025": {
+          "rank": "Silver 2",
+          "rankClass": "rank-silver",
+          "champions": [
+            {
+              "name": "Twisted Fate",
+              "iconName": "TwistedFate",
+              "kda": 2.3,
+              "kdaClass": "kda-avg",
+              "games": 24,
+              "wins": 11,
+              "losses": 13,
+              "winrate": 46
+            }
+          ],
+          "overallWr": 44,
+          "overallWrRecord": "32W 40L",
+          "overallWrClass": "wr-low",
+          "mastery": [{ "name": "Twisted Fate", "points": "180K" }]
+        }
+      }
+    },
+    {
+      "id": 17,
+      "name": "May31st",
+      "team": "ubck",
+      "opggUrl": "https://www.op.gg/summoners/vn/May31st-9999",
+      "seasons": {
+        "2026": {
+          "rank": "--",
+          "rankClass": "rank-unranked",
+          "champions": [],
+          "overallWr": "--",
+          "mastery": []
+        },
+        "2025": {
+          "rank": "Silver 1",
+          "rankClass": "rank-silver",
+          "champions": [
+            {
+              "name": "Lux",
+              "iconName": "Lux",
+              "kda": 2.5,
+              "kdaClass": "kda-avg",
+              "games": 16,
+              "wins": 8,
+              "losses": 8,
+              "winrate": 50
+            }
+          ],
+          "overallWr": 49,
+          "overallWrRecord": "35W 36L",
+          "overallWrClass": "wr-low",
+          "mastery": [{ "name": "Lux", "points": "160K" }]
+        }
+      }
+    },
+    {
+      "id": 18,
+      "name": "NONE",
+      "team": "trulawin",
+      "opggUrl": "https://www.op.gg/summoners/vn/NONE-MOON",
+      "seasons": {
+        "2026": {
+          "rank": "--",
+          "rankClass": "rank-unranked",
+          "champions": [],
+          "overallWr": "--",
+          "mastery": []
+        },
+        "2025": {
+          "rank": "Gold 1",
+          "rankClass": "rank-gold",
+          "champions": [
+            {
+              "name": "Syndra",
+              "iconName": "Syndra",
+              "kda": 2.95,
+              "kdaClass": "kda-avg",
+              "games": 28,
+              "wins": 15,
+              "losses": 13,
+              "winrate": 54
+            }
+          ],
+          "overallWr": 53,
+          "overallWrRecord": "60W 53L",
+          "overallWrClass": "wr-mid",
+          "mastery": [{ "name": "Syndra", "points": "280K" }]
+        }
+      }
+    },
+    {
+      "id": 19,
+      "name": "Âm Hư Dương Thực",
+      "team": "trulawin",
+      "opggUrl": "https://www.op.gg/summoners/vn/%C3%82m%20H%C6%B0%20D%C6%B0%C6%A1ng%20Th%E1%BB%B1c-2911",
+      "seasons": {
+        "2026": {
+          "rank": "--",
+          "rankClass": "rank-unranked",
+          "champions": [],
+          "overallWr": "--",
+          "mastery": []
+        },
+        "2025": {
+          "rank": "Platinum 2",
+          "rankClass": "rank-platinum",
+          "champions": [
+            {
+              "name": "Orianna",
+              "iconName": "Orianna",
+              "kda": 2.85,
+              "kdaClass": "kda-avg",
+              "games": 22,
+              "wins": 12,
+              "losses": 10,
+              "winrate": 55
+            }
+          ],
+          "overallWr": 52,
+          "overallWrRecord": "50W 45L",
+          "overallWrClass": "wr-mid",
+          "mastery": [{ "name": "Orianna", "points": "210K" }]
+        }
+      }
+    },
+    {
+      "id": 20,
+      "name": "GumayuSon",
+      "team": "trulawin",
+      "opggUrl": "https://www.op.gg/summoners/vn/GumayuSon-GMS",
+      "seasons": {
+        "2026": {
+          "rank": "--",
+          "rankClass": "rank-unranked",
+          "champions": [],
+          "overallWr": "--",
+          "mastery": []
+        },
+        "2025": {
+          "rank": "Silver 3",
+          "rankClass": "rank-silver",
+          "champions": [
+            {
+              "name": "Brand",
+              "iconName": "Brand",
+              "kda": 2.15,
+              "kdaClass": "kda-avg",
+              "games": 30,
+              "wins": 13,
+              "losses": 17,
+              "winrate": 43
+            }
+          ],
+          "overallWr": 41,
+          "overallWrRecord": "30W 42L",
+          "overallWrClass": "wr-low",
+          "mastery": [{ "name": "Brand", "points": "250K" }]
+        }
+      }
+    },
+    {
+      "id": 21,
+      "name": "Bear1",
+      "team": "trulawin",
+      "opggUrl": "https://www.op.gg/summoners/vn/Bear1-6969",
+      "seasons": {
+        "2026": {
+          "rank": "Unranked",
+          "rankClass": "rank-unranked",
+          "champions": [
+            {
+              "name": "Caitlyn",
+              "iconName": "Caitlyn",
+              "kda": 4.0,
+              "kdaClass": "kda-good",
+              "games": 1,
+              "wins": 1,
+              "losses": 0,
+              "winrate": 100
+            },
+            {
+              "name": "Diana",
+              "iconName": "Diana",
+              "kda": 1.24,
+              "kdaClass": "kda-bad",
+              "games": 1,
+              "wins": 1,
+              "losses": 0,
+              "winrate": 100
+            },
+            {
+              "name": "Thresh",
+              "iconName": "Thresh",
+              "kda": 2.0,
+              "kdaClass": "kda-avg",
+              "games": 1,
+              "wins": 0,
+              "losses": 1,
+              "winrate": 0
+            }
+          ],
+          "overallWr": 67,
+          "overallWrRecord": "2W 1L",
+          "overallWrClass": "wr-high",
+          "mastery": [
+            {"name": "Darius", "points": "255K"},
+            {"name": "Jinx", "points": "233K"},
+            {"name": "Lee Sin", "points": "219K"}
+          ]
+        },
+        "2025": {
+          "rank": "Platinum 4",
+          "rankClass": "rank-platinum",
+          "champions": [
+            {
+              "name": "Darius",
+              "iconName": "Darius",
+              "kda": 2.1,
+              "kdaClass": "kda-avg",
+              "games": 24,
+              "wins": 13,
+              "losses": 11,
+              "winrate": 54
+            },
+            {
+              "name": "Jinx",
+              "iconName": "Jinx",
+              "kda": 2.45,
+              "kdaClass": "kda-avg",
+              "games": 20,
+              "wins": 11,
+              "losses": 9,
+              "winrate": 55
+            },
+            {
+              "name": "Lee Sin",
+              "iconName": "LeeSin",
+              "kda": 2.2,
+              "kdaClass": "kda-avg",
+              "games": 18,
+              "wins": 9,
+              "losses": 9,
+              "winrate": 50
+            }
+          ],
+          "overallWr": 53,
+          "overallWrRecord": "60W 53L",
+          "overallWrClass": "wr-mid",
+          "mastery": [
+            { "name": "Darius", "points": "255K" },
+            { "name": "Jinx", "points": "233K" },
+            { "name": "Lee Sin", "points": "219K" }
+          ]
+        }
+      }
+    },
+    {
+      "id": 22,
+      "name": "vuvantrung9876",
+      "team": "trulawin",
+      "opggUrl": "https://www.op.gg/summoners/vn/vuvantrung9876-vn2",
+      "seasons": {
+        "2026": {
+          "rank": "--",
+          "rankClass": "rank-unranked",
+          "champions": [],
+          "overallWr": "--",
+          "mastery": []
+        },
+        "2025": {
+          "rank": "Silver 2",
+          "rankClass": "rank-silver",
+          "champions": [
+            {
+              "name": "Thresh",
+              "iconName": "Thresh",
+              "kda": 2.25,
+              "kdaClass": "kda-avg",
+              "games": 27,
+              "wins": 13,
+              "losses": 14,
+              "winrate": 48
+            }
+          ],
+          "overallWr": 46,
+          "overallWrRecord": "40W 46L",
+          "overallWrClass": "wr-low",
+          "mastery": [{ "name": "Thresh", "points": "280K" }]
+        }
+      }
+    },
+    {
+      "id": 23,
+      "name": "Gạo trăm củi",
+      "team": "trulawin",
+      "opggUrl": "https://www.op.gg/summoners/vn/G%E1%BA%A1o%20tr%C4%83m%20c%E1%BB%A7-thanh",
+      "seasons": {
+        "2026": {
+          "rank": "--",
+          "rankClass": "rank-unranked",
+          "champions": [],
+          "overallWr": "--",
+          "mastery": []
+        },
+        "2025": {
+          "rank": "Bronze 3",
+          "rankClass": "rank-bronze",
+          "champions": [
+            {
+              "name": "Blitzcrank",
+              "iconName": "Blitzcrank",
+              "kda": 1.85,
+              "kdaClass": "kda-bad",
+              "games": 20,
+              "wins": 7,
+              "losses": 13,
+              "winrate": 35
+            }
+          ],
+          "overallWr": 37,
+          "overallWrRecord": "20W 34L",
+          "overallWrClass": "wr-low",
+          "mastery": [{ "name": "Blitzcrank", "points": "140K" }]
+        }
+      }
+    },
+    {
+      "id": 24,
+      "name": "I am sky",
+      "team": "top1",
+      "opggUrl": "https://www.op.gg/summoners/vn/I%20am%20sky-9265",
+      "seasons": {
+        "2026": {
+          "rank": "Platinum 346 LP",
+          "rankClass": "rank-platinum",
+          "champions": [
+            {"name": "LeBlanc", "iconName": "Leblanc", "kda": 2.50, "kdaClass": "kda-avg", "games": 3, "wins": 2, "losses": 1, "winrate": 67},
+            {"name": "Akali", "iconName": "Akali", "kda": 1.67, "kdaClass": "kda-bad", "games": 3, "wins": 1, "losses": 2, "winrate": 33},
+            {"name": "Lee Sin", "iconName": "LeeSin", "kda": 1.15, "kdaClass": "kda-bad", "games": 2, "wins": 1, "losses": 1, "winrate": 50}
+          ],
+          "overallWr": 50,
+          "overallWrRecord": "8W 8L",
+          "overallWrClass": "wr-mid",
+          "mastery": [
+            {"name": "Lee Sin", "points": "360K"},
+            {"name": "Thresh", "points": "349K"},
+            {"name": "Graves", "points": "226K"}
+          ]
+        },
+        "2025": {
+          "rank": "Gold 3",
+          "rankClass": "rank-gold",
+          "champions": [
+            {
+              "name": "Khazix",
+              "iconName": "Khazix",
+              "kda": 2.65,
+              "kdaClass": "kda-avg",
+              "games": 26,
+              "wins": 14,
+              "losses": 12,
+              "winrate": 54
+            }
+          ],
+          "overallWr": 52,
+          "overallWrRecord": "52W 48L",
+          "overallWrClass": "wr-mid",
+          "mastery": [{ "name": "Khazix", "points": "290K" }]
+        }
+      }
+    },
+    {
+      "id": 25,
+      "name": "Bèo Túng",
+      "team": "top1",
+      "opggUrl": "https://www.op.gg/summoners/vn/B%C3%A8o%20T%C3%BAng-2311",
+      "seasons": {
+        "2026": {
+          "rank": "Silver 282 LP",
+          "rankClass": "rank-silver",
+          "champions": [
+            {"name": "Ahri", "iconName": "Ahri", "kda": 2.86, "kdaClass": "kda-avg", "games": 16, "wins": 12, "losses": 4, "winrate": 75},
+            {"name": "Graves", "iconName": "Graves", "kda": 4.30, "kdaClass": "kda-good", "games": 6, "wins": 4, "losses": 2, "winrate": 67},
+            {"name": "Caitlyn", "iconName": "Caitlyn", "kda": 1.82, "kdaClass": "kda-bad", "games": 6, "wins": 3, "losses": 3, "winrate": 50}
+          ],
+          "overallWr": 57,
+          "overallWrRecord": "40W 30L",
+          "overallWrClass": "wr-high",
+          "mastery": [
+            {"name": "Riven", "points": "325K"},
+            {"name": "Lee Sin", "points": "275K"},
+            {"name": "Caitlyn", "points": "128K"}
+          ]
+        },
+        "2025": {
+          "rank": "Bronze 4",
+          "rankClass": "rank-bronze",
+          "champions": [
+            {"name": "Ahri", "iconName": "Ahri", "kda": 2.86, "kdaClass": "kda-avg", "games": 12, "wins": 8, "losses": 4, "winrate": 67},
+            {"name": "Rammus", "iconName": "Rammus", "kda": 2.4, "kdaClass": "kda-avg", "games": 18, "wins": 8, "losses": 10, "winrate": 44},
+            {"name": "Lissandra", "iconName": "Lissandra", "kda": 3.42, "kdaClass": "kda-good", "games": 4, "wins": 3, "losses": 1, "winrate": 75}
+          ],
+          "overallWr": 52,
+          "overallWrRecord": "37W 34L",
+          "overallWrClass": "wr-mid",
+          "mastery": [{"name": "Riven", "points": "325K"}, {"name": "Rammus", "points": "120K"}, {"name": "Lissandra", "points": "95K"}]
+        }
+      }
+    },
+    {
+      "id": 26,
+      "name": "Cân 5 cân 7",
+      "team": "top1",
+      "opggUrl": "https://www.op.gg/summoners/vn/C%C3%A2n%205%20c%C3%A2n%207-2901",
+      "seasons": {
+        "2026": {
+          "rank": "Unranked",
+          "rankClass": "rank-unranked",
+          "champions": [
+            {"name": "Warwick", "iconName": "Warwick", "kda": 2.15, "kdaClass": "kda-avg", "games": 2, "wins": 1, "losses": 1, "winrate": 50},
+            {"name": "Blitzcrank", "iconName": "Blitzcrank", "kda": 1.95, "kdaClass": "kda-bad", "games": 3, "wins": 1, "losses": 2, "winrate": 33},
+            {"name": "Shen", "iconName": "Shen", "kda": 2.55, "kdaClass": "kda-avg", "games": 2, "wins": 1, "losses": 1, "winrate": 50}
+          ],
+          "overallWr": 44,
+          "overallWrRecord": "3W 4L",
+          "overallWrClass": "wr-low",
+          "mastery": [
+            {"name": "Thresh", "points": "128K"},
+            {"name": "Jhin", "points": "126K"},
+            {"name": "Warwick", "points": "82K"}
+          ]
+        },
+        "2025": {
+          "rank": "Gold 3",
+          "rankClass": "rank-gold",
+          "champions": [
+            {"name": "Warwick", "iconName": "Warwick", "kda": 3.59, "kdaClass": "kda-good", "games": 8, "wins": 7, "losses": 1, "winrate": 88},
+            {"name": "Blitzcrank", "iconName": "Blitzcrank", "kda": 2.04, "kdaClass": "kda-avg", "games": 6, "wins": 3, "losses": 3, "winrate": 50},
+            {"name": "Jax", "iconName": "Jax", "kda": 1.27, "kdaClass": "kda-bad", "games": 5, "wins": 1, "losses": 4, "winrate": 20}
+          ],
+          "overallWr": 60,
+          "overallWrRecord": "57W 38L",
+          "overallWrClass": "wr-high",
+          "mastery": [{"name": "Thresh", "points": "128K"}, {"name": "Jhin", "points": "126K"}, {"name": "Warwick", "points": "82K"}]
+        }
+      }
+    },
+    {
+      "id": 27,
+      "name": "18th January",
+      "team": "top1",
+      "opggUrl": "https://www.op.gg/summoners/vn/18th%20January-Beta",
+      "seasons": {
+        "2026": {
+          "rank": "Unranked",
+          "rankClass": "rank-unranked",
+          "champions": [],
+          "overallWr": "--",
+          "mastery": [
+            {"name": "Lee Sin", "points": "665K"},
+            {"name": "Yasuo", "points": "500K"},
+            {"name": "Kai'Sa", "points": "340K"}
+          ]
+        },
+        "2025": {
+          "rank": "Gold 2",
+          "rankClass": "rank-gold",
+          "champions": [
+            {"name": "Lee Sin", "iconName": "LeeSin", "kda": 3.20, "kdaClass": "kda-good", "games": 15, "wins": 9, "losses": 6, "winrate": 60},
+            {"name": "Yasuo", "iconName": "Yasuo", "kda": 2.45, "kdaClass": "kda-avg", "games": 10, "wins": 5, "losses": 5, "winrate": 50},
+            {"name": "Renekton", "iconName": "Renekton", "kda": 2.75, "kdaClass": "kda-avg", "games": 23, "wins": 12, "losses": 11, "winrate": 52}
+          ],
+          "overallWr": 57,
+          "overallWrRecord": "57W 43L",
+          "overallWrClass": "wr-high",
+          "mastery": [{"name": "Lee Sin", "points": "665K"}, {"name": "Yasuo", "points": "500K"}, {"name": "Renekton", "points": "240K"}]
+        }
+      }
+    },
+    {
+      "id": 28,
+      "name": "350ug xé đôi",
+      "team": "top1",
+      "opggUrl": "https://www.op.gg/summoners/vn/350ug%20x%C3%A9%20%C4%91%C3%B4i-2707",
+      "seasons": {
+        "2026": {
+          "rank": "Platinum 425 LP",
+          "rankClass": "rank-platinum",
+          "champions": [
+            {"name": "Rumble", "iconName": "Rumble", "kda": 1.33, "kdaClass": "kda-bad", "games": 2, "wins": 1, "losses": 1, "winrate": 50},
+            {"name": "Dr. Mundo", "iconName": "DrMundo", "kda": 2.60, "kdaClass": "kda-avg", "games": 2, "wins": 1, "losses": 1, "winrate": 50},
+            {"name": "Rakan", "iconName": "Rakan", "kda": 3.33, "kdaClass": "kda-good", "games": 1, "wins": 1, "losses": 0, "winrate": 100}
+          ],
+          "overallWr": 63,
+          "overallWrRecord": "5W 3L",
+          "overallWrClass": "wr-high",
+          "mastery": [
+            {"name": "Sylas", "points": "94K"},
+            {"name": "Smolder", "points": "58K"},
+            {"name": "Aatrox", "points": "49K"}
+          ]
+        },
+        "2025": {
+          "rank": "Platinum 3",
+          "rankClass": "rank-platinum",
+          "champions": [
+            {"name": "Rumble", "iconName": "Rumble", "kda": 1.91, "kdaClass": "kda-bad", "games": 4, "wins": 1, "losses": 3, "winrate": 25},
+            {"name": "Renekton", "iconName": "Renekton", "kda": 1.67, "kdaClass": "kda-bad", "games": 3, "wins": 1, "losses": 2, "winrate": 33},
+            {"name": "Malphite", "iconName": "Malphite", "kda": 5.50, "kdaClass": "kda-good", "games": 2, "wins": 2, "losses": 0, "winrate": 100}
+          ],
+          "overallWr": 51,
+          "overallWrRecord": "47W 45L",
+          "overallWrClass": "wr-mid",
+          "mastery": [{"name": "Sylas", "points": "94K"}, {"name": "Aatrox", "points": "49K"}, {"name": "Kai'Sa", "points": "42K"}]
+        }
+      }
+    },
+    {
+      "id": 29,
+      "name": "killic",
+      "team": "top1",
+      "opggUrl": "https://www.op.gg/summoners/vn/killic-vn2",
+      "seasons": {
+        "2026": {
+          "rank": "Silver 459 LP",
+          "rankClass": "rank-silver",
+          "champions": [
+            {"name": "Gnar", "iconName": "Gnar", "kda": 1.48, "kdaClass": "kda-bad", "games": 5, "wins": 2, "losses": 3, "winrate": 40},
+            {"name": "Lux", "iconName": "Lux", "kda": 2.88, "kdaClass": "kda-avg", "games": 4, "wins": 2, "losses": 2, "winrate": 50},
+            {"name": "Ryze", "iconName": "Ryze", "kda": 1.17, "kdaClass": "kda-bad", "games": 3, "wins": 2, "losses": 1, "winrate": 67}
+          ],
+          "overallWr": 39,
+          "overallWrRecord": "16W 25L",
+          "overallWrClass": "wr-low",
+          "mastery": [
+            {"name": "Sett", "points": "23K"},
+            {"name": "Ryze", "points": "22K"},
+            {"name": "Caitlyn", "points": "19K"}
+          ]
+        },
+        "2025": {
+          "rank": "Silver 2",
+          "rankClass": "rank-silver",
+          "champions": [
+            {"name": "Ryze", "iconName": "Ryze", "kda": 1.17, "kdaClass": "kda-bad", "games": 8, "wins": 5, "losses": 3, "winrate": 62},
+            {"name": "Lux", "iconName": "Lux", "kda": 2.88, "kdaClass": "kda-avg", "games": 9, "wins": 4, "losses": 5, "winrate": 44},
+            {"name": "Caitlyn", "iconName": "Caitlyn", "kda": 1.52, "kdaClass": "kda-bad", "games": 8, "wins": 4, "losses": 4, "winrate": 50}
+          ],
+          "overallWr": 50,
+          "overallWrRecord": "51W 51L",
+          "overallWrClass": "wr-mid",
+          "mastery": [{"name": "Ryze", "points": "22K"}, {"name": "Lux", "points": "19K"}, {"name": "Caitlyn", "points": "18K"}]
+        }
+      }
+    }
+  ]
+}

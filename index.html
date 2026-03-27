@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LoL Team Dashboard</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #0a0e14;
+    color: #c5c8d0;
+    min-height: 100vh;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a1f2e 0%, #0d1117 100%);
+    border-bottom: 2px solid #c89b3c;
+    padding: 30px 40px;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 2.2rem;
+    color: #c89b3c;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 20px rgba(200,155,60,0.3);
+  }
+  .header p { color: #8b8fa3; margin-top: 8px; font-size: 0.95rem; }
+
+  .stats-overview {
+    display: flex; justify-content: center; gap: 40px;
+    padding: 20px 40px; background: #0d1117;
+    border-bottom: 1px solid #1e2330;
+    flex-wrap: wrap;
+  }
+  .stat-box {
+    text-align: center; padding: 15px 25px;
+    background: #141920; border-radius: 10px;
+    border: 1px solid #1e2330;
+  }
+  .stat-box .num { font-size: 1.8rem; font-weight: 700; color: #c89b3c; }
+  .stat-box .label { font-size: 0.8rem; color: #6b7084; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+  .filter-bar {
+    display: flex; justify-content: center; gap: 10px;
+    padding: 20px; flex-wrap: wrap;
+  }
+  .filter-btn {
+    padding: 8px 20px; border: 1px solid #2a3040;
+    background: #141920; color: #8b8fa3;
+    border-radius: 20px; cursor: pointer;
+    font-size: 0.85rem; transition: all 0.2s;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    background: #c89b3c; color: #0a0e14;
+    border-color: #c89b3c; font-weight: 600;
+  }
+
+  .teams-container { padding: 20px 40px 60px; max-width: 1400px; margin: 0 auto; }
+
+  .team-section {
+    margin-bottom: 35px;
+    background: #111620;
+    border-radius: 12px;
+    border: 1px solid #1e2330;
+    overflow: hidden;
+  }
+  .team-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 24px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .team-header:hover { background: #161c28; }
+  .team-name {
+    font-size: 1.3rem; font-weight: 700;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .team-badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px; border-radius: 8px;
+    font-size: 0.75rem; font-weight: 700;
+  }
+  .team-meta {
+    display: flex; gap: 20px; font-size: 0.85rem; color: #6b7084;
+  }
+  .team-toggle { font-size: 1.2rem; color: #6b7084; transition: transform 0.3s; }
+  .team-section.collapsed .team-toggle { transform: rotate(-90deg); }
+  .team-section.collapsed .team-body { display: none; }
+
+  .team-body { padding: 0 24px 24px; }
+
+  .player-table {
+    width: 100%; border-collapse: separate;
+    border-spacing: 0 6px;
+  }
+  .player-table th {
+    text-align: left; padding: 10px 14px;
+    font-size: 0.75rem; text-transform: uppercase;
+    letter-spacing: 1px; color: #4a4f64;
+    border-bottom: 1px solid #1e2330;
+  }
+  .player-row {
+    background: #0d1117; border-radius: 8px;
+    transition: all 0.2s;
+  }
+  .player-row:hover { background: #161c28; transform: translateX(4px); }
+  .player-row td {
+    padding: 12px 14px; vertical-align: middle;
+  }
+  .player-row td:first-child { border-radius: 8px 0 0 8px; }
+  .player-row td:last-child { border-radius: 0 8px 8px 0; }
+
+  .player-name {
+    font-weight: 600; color: #e4e6eb; font-size: 0.95rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .player-name .lvl {
+    font-size: 0.7rem; color: #6b7084;
+    background: #1a1f2e; padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .opgg-link {
+    color: #5383e8; text-decoration: none;
+    font-size: 0.8rem; transition: color 0.2s;
+  }
+  .opgg-link:hover { color: #7ba4f7; text-decoration: underline; }
+
+  .rank-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 10px; border-radius: 6px;
+    font-size: 0.8rem; font-weight: 600;
+  }
+  .rank-iron { background: #2a2520; color: #8b7355; }
+  .rank-bronze { background: #2a2118; color: #cd7f32; }
+  .rank-silver { background: #1e2228; color: #8fa3b0; }
+  .rank-gold { background: #2a2510; color: #daa520; }
+  .rank-platinum { background: #1a2520; color: #4cbbb9; }
+  .rank-emerald { background: #0f2518; color: #50c878; }
+  .rank-diamond { background: #1a1e30; color: #b9b4fb; }
+  .rank-unranked { background: #1a1a1a; color: #555; }
+
+  .champ-list {
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .champ-item {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 0.82rem;
+  }
+  .champ-icon {
+    width: 24px; height: 24px; border-radius: 4px;
+    background: #1a1f2e; border: 1px solid #2a3040;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.6rem; color: #c89b3c; font-weight: 700;
+    overflow: hidden;
+  }
+  .champ-icon img { width: 100%; height: 100%; object-fit: cover; }
+  .champ-name { color: #b0b3c0; }
+  .champ-games { color: #555; font-size: 0.75rem; }
+
+  .kda { font-weight: 600; }
+  .kda-good { color: #50c878; }
+  .kda-avg { color: #daa520; }
+  .kda-bad { color: #e84057; }
+
+  .winrate { font-weight: 600; }
+  .wr-high { color: #5383e8; }
+  .wr-mid { color: #daa520; }
+  .wr-low { color: #e84057; }
+
+  .mastery-list {
+    display: flex; gap: 6px; flex-wrap: wrap;
+  }
+  .mastery-chip {
+    padding: 3px 8px; border-radius: 4px;
+    background: #1a1f2e; border: 1px solid #2a3040;
+    font-size: 0.72rem; color: #8b8fa3;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .mastery-chip .pts { color: #c89b3c; font-weight: 600; }
+
+  .no-data { color: #3a3f50; font-style: italic; font-size: 0.8rem; }
+
+  /* Team colors */
+  .team-tpcoms36 .team-badge { background: #1a3a5c; color: #5383e8; }
+  .team-tpcoms36 .team-name { color: #5383e8; }
+  .team-fanj97 .team-badge { background: #3a1a3a; color: #e84097; }
+  .team-fanj97 .team-name { color: #e84097; }
+  .team-ubck .team-badge { background: #1a3a2a; color: #50c878; }
+  .team-ubck .team-name { color: #50c878; }
+  .team-trulawin .team-badge { background: #3a2a1a; color: #e8a050; }
+  .team-trulawin .team-name { color: #e8a050; }
+  .team-top1 .team-badge { background: #2a1a3a; color: #b070e8; }
+  .team-top1 .team-name { color: #b070e8; }
+
+  @media (max-width: 1000px) {
+    .teams-container { padding: 10px 12px 40px; }
+    .player-table { font-size: 0.82rem; }
+    .team-header { padding: 14px 16px; }
+    .team-body { padding: 0 12px 16px; }
+    .header { padding: 20px 16px; }
+    .header h1 { font-size: 1.4rem; }
+    .stats-overview { gap: 16px; padding: 16px; }
+    .player-table th, .player-row td { padding: 8px 8px; }
+    .mastery-list { display: none; }
+  }
+
+  .scroll-hint { overflow-x: auto; }
+
+  /* ── Season 2025 previous data ── */
+  .s2025-detail-row { background: #07090f; }
+  .s2025-detail-row td { padding: 0 !important; border-radius: 0 !important; }
+  .s2025-panel {
+    display: flex; flex-wrap: wrap; gap: 22px; align-items: flex-start;
+    padding: 12px 24px 14px;
+    border-top: 1px dashed #151e2a;
+    background: #070b12;
+  }
+  .s2025-season-tag {
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 2px;
+    color: #4a7ab5; background: #0a1822;
+    border: 1px solid #1a3550; border-radius: 4px;
+    padding: 3px 10px; align-self: center;
+    text-transform: uppercase;
+  }
+  .s2025-block { min-width: 80px; }
+  .s2025-block-title {
+    font-size: 0.6rem; text-transform: uppercase;
+    color: #333848; letter-spacing: 1px; margin-bottom: 5px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>League of Legends - Team Dashboard</h1>
+  <p>VN Server &bull; 6 Teams &bull; 29 Players &bull; Data from OP.GG</p>
+</div>
+
+<div class="stats-overview">
+  <div class="stat-box"><div class="num">6</div><div class="label">Teams</div></div>
+  <div class="stat-box"><div class="num">29</div><div class="label">Players</div></div>
+  <div class="stat-box"><div class="num">Emerald 3</div><div class="label">Highest Active Rank</div></div>
+  <div class="stat-box"><div class="num">VN</div><div class="label">Server</div></div>
+</div>
+
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterTeam(event, 'all')">All Teams</button>
+  <button class="filter-btn" onclick="filterTeam(event, 'tpcoms36')">TPComs36</button>
+  <button class="filter-btn" onclick="filterTeam(event, 'fanj97')">Fan J97</button>
+  <button class="filter-btn" onclick="filterTeam(event, 'ubck')">UBCK</button>
+  <button class="filter-btn" onclick="filterTeam(event, 'trulawin')">Trụ l&agrave; Win</button>
+  <button class="filter-btn" onclick="filterTeam(event, 'top1')">Top1</button>
+</div>
+
+<div class="teams-container">
+
+<!-- ============ TPComs36 ============ -->
+<div class="team-section team-tpcoms36" data-team="tpcoms36">
+  <div class="team-header" onclick="toggleTeam(this)">
+    <div class="team-name"><span class="team-badge">TP</span> TPComs36</div>
+    <div class="team-meta"><span>6 players</span></div>
+    <span class="team-toggle">&#9660;</span>
+  </div>
+  <div class="team-body">
+    <div class="scroll-hint">
+    <table class="player-table">
+      <thead><tr>
+        <th>Player</th><th>Rank</th><th>Top Champions (KDA)</th><th>Win Rate</th><th>Mastery</th><th>OP.GG</th>
+      </tr></thead>
+      <tbody>
+        <tr class="player-row">
+          <td><div class="player-name">Sinnnnn <span class="lvl">Lv.878</span></div></td>
+          <td><span class="rank-badge rank-emerald">Emerald 3 &bull; 75LP</span></td>
+          <td><div class="champ-list">
+            <div class="champ-item"><div class="champ-icon"><img src="https://opgg-static.akamaized.net/meta/images/lol/16.6.1/champion/Zoe.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_png,w_48,h_48&v=1606" alt="Zoe"></div><span class="champ-name">Zoe</span> <span class="kda kda-good">3.00</span> <span class="champ-games">54G</span></div>
+            <div class="champ-item"><div class="champ-icon"><img src="https://opgg-static.akamaized.net/meta/images/lol/16.6.1/champion/MissFortune.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_png,w_48,h_48&v=1606" alt="MF"></div><span class="champ-name">Miss Fortune</span> <span class="kda kda-avg">2.54</span> <span class="champ-games">24G</span></div>
+            <div class="champ-item"><div class="champ-icon"><img src="https://opgg-static.akamaized.net/meta/images/lol/16.6.1/champion/Jinx.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_png,w_48,h_48&v=1606" alt="Jinx"></div><span class="champ-name">Jinx</span> <span class="kda kda-avg">2.45</span> <span class="champ-games">12G</span></div>
+          </div></td>
+          <td><span class="winrate wr-mid">50%</span><br><small style="color:#555">85W 84L</small></td>
+          <td><div class="mastery-list">
+            <span class="mastery-chip">Zoe <span class="pts">475K</span></span>
+            <span class="mastery-chip">Thresh <span class="pts">434K</span></span>
+            <span class="mastery-chip">Jinx <span class="pts">404K</span></span>
+          </div></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/Sinnnnn-1108" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">ChuanTT <span class="lvl">Lv.110</span></div></td>
+          <td><span class="rank-badge rank-unranked">Unranked</span><br><small style="color:#555">Prev: Gold 3 Flex</small></td>
+          <td><div class="champ-list">
+            <div class="champ-item"><div class="champ-icon"><img src="https://opgg-static.akamaized.net/meta/images/lol/16.6.1/champion/Sylas.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_png,w_48,h_48&v=1606" alt="Sylas"></div><span class="champ-name">Sylas</span> <span class="kda kda-avg">2.04</span> <span class="champ-games">36G</span></div>
+            <div class="champ-item"><div class="champ-icon"><img src="https://opgg-static.akamaized.net/meta/images/lol/16.6.1/champion/Ashe.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_png,w_48,h_48&v=1606" alt="Ashe"></div><span class="champ-name">Ashe</span> <span class="kda kda-avg">2.31</span> <span class="champ-games">24G</span></div>
+            <div class="champ-item"><div class="champ-icon"><img src="https://opgg-static.akamaized.net/meta/images/lol/16.6.1/champion/MasterYi.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_png,w_48,h_48&v=1606" alt="Yi"></div><span class="champ-name">Master Yi</span> <span class="kda kda-bad">1.69</span> <span class="champ-games">14G</span></div>
+          </div></td>
+          <td><span class="winrate wr-mid">50%</span><br><small style="color:#555">Sylas main</small></td>
+          <td><div class="mastery-list">
+            <span class="mastery-chip">Sylas <span class="pts">196K</span></span>
+            <span class="mastery-chip">Brand <span class="pts">65K</span></span>
+            <span class="mastery-chip">Yasuo <span class="pts">38K</span></span>
+          </div></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/ChuanTT-1916" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">Mikan <span class="lvl">Lv.540</span></div></td>
+          <td><span class="rank-badge rank-unranked">Unranked</span><br><small style="color:#555">Prev: Gold 3</small></td>
+          <td><div class="champ-list">
+            <div class="champ-item"><div class="champ-icon"><img src="https://opgg-static.akamaized.net/meta/images/lol/16.6.1/champion/Fiora.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_png,w_48,h_48&v=1606" alt="Fiora"></div><span class="champ-name">Fiora</span> <span class="kda kda-good">5.00</span> <span class="champ-games">1G</span></div>
+          </div></td>
+          <td><span class="winrate wr-high">100%</span><br><small style="color:#555">1W 0L</small></td>
+          <td><div class="mastery-list">
+            <span class="mastery-chip">Fiora <span class="pts">784K</span></span>
+            <span class="mastery-chip">Yasuo <span class="pts">334K</span></span>
+            <span class="mastery-chip">Zed <span class="pts">250K</span></span>
+          </div></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/Mikan-1227" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">Yang Yang Yang <span class="lvl">Lv.415</span></div></td>
+          <td><span class="rank-badge rank-unranked">Unranked</span><br><small style="color:#555">Prev: Silver 1</small></td>
+          <td><div class="champ-list">
+            <div class="champ-item"><div class="champ-icon"><img src="https://opgg-static.akamaized.net/meta/images/lol/16.6.1/champion/Nocturne.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_png,w_48,h_48&v=1606" alt="Nocturne"></div><span class="champ-name">Nocturne</span> <span class="kda kda-good">3.20</span> <span class="champ-games">2G</span></div>
+            <div class="champ-item"><div class="champ-icon"><img src="https://opgg-static.akamaized.net/meta/images/lol/16.6.1/champion/JarvanIV.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_png,w_48,h_48&v=1606" alt="J4"></div><span class="champ-name">Jarvan IV</span> <span class="kda kda-avg">2.50</span> <span class="champ-games">1G</span></div>
+          </div></td>
+          <td><span class="winrate wr-mid">50%</span><br><small style="color:#555">2W 2L</small></td>
+          <td><div class="mastery-list">
+            <span class="mastery-chip">Riven <span class="pts">306K</span></span>
+            <span class="mastery-chip">Yasuo <span class="pts">201K</span></span>
+            <span class="mastery-chip">Lee Sin <span class="pts">192K</span></span>
+          </div></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/Yang%20Yang%20Yang-5971" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">Rentie <span class="lvl">Lv.601</span></div></td>
+          <td><span class="rank-badge rank-emerald">Emerald 3 &bull; 6LP</span></td>
+          <td><div class="champ-list">
+            <div class="champ-item"><div class="champ-icon"><img src="https://opgg-static.akamaized.net/meta/images/lol/16.6.1/champion/Ryze.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_png,w_48,h_48&v=1606" alt="Ryze"></div><span class="champ-name">Ryze</span> <span class="kda kda-good">3.20</span> <span class="champ-games">23G</span></div>
+            <div class="champ-item"><div class="champ-icon"><img src="https://opgg-static.akamaized.net/meta/images/lol/16.6.1/champion/Sylas.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_png,w_48,h_48&v=1606" alt="Sylas"></div><span class="champ-name">Sylas</span> <span class="kda kda-good">2.95</span> <span class="champ-games">14G</span></div>
+            <div class="champ-item"><div class="champ-icon"><img src="https://opgg-static.akamaized.net/meta/images/lol/16.6.1/champion/Malphite.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_png,w_48,h_48&v=1606" alt="Malph"></div><span class="champ-name">Malphite</span> <span class="kda kda-avg">2.25</span> <span class="champ-games">7G</span></div>
+          </div></td>
+          <td><span class="winrate wr-mid">51%</span><br><small style="color:#555">20W 19L</small></td>
+          <td><div class="mastery-list">
+            <span class="mastery-chip">Akali <span class="pts">290K</span></span>
+            <span class="mastery-chip">Sylas <span class="pts">282K</span></span>
+            <span class="mastery-chip">Ezreal <span class="pts">247K</span></span>
+          </div></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/Rentie-V4G" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">H&#432;ng T&#7841; Vl</div></td>
+          <td><span class="rank-badge rank-unranked">--</span></td>
+          <td><span class="no-data">Click OP.GG to view</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/H%C6%B0ng%20T%E1%BA%A1%20Vl-VN2" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+<!-- ============ Fan J97 ============ -->
+<div class="team-section team-fanj97" data-team="fanj97">
+  <div class="team-header" onclick="toggleTeam(this)">
+    <div class="team-name"><span class="team-badge">J97</span> Fan J97</div>
+    <div class="team-meta"><span>6 players</span></div>
+    <span class="team-toggle">&#9660;</span>
+  </div>
+  <div class="team-body">
+    <div class="scroll-hint">
+    <table class="player-table">
+      <thead><tr>
+        <th>Player</th><th>Rank</th><th>Top Champions (KDA)</th><th>Win Rate</th><th>Mastery</th><th>OP.GG</th>
+      </tr></thead>
+      <tbody>
+        <tr class="player-row">
+          <td><div class="player-name">The Best AD <span class="lvl">Lv.293</span></div></td>
+          <td><span class="rank-badge rank-bronze">Bronze 3 &bull; 28LP</span></td>
+          <td><div class="champ-list">
+            <div class="champ-item"><div class="champ-icon"><img src="https://opgg-static.akamaized.net/meta/images/lol/16.6.1/champion/Xerath.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_png,w_48,h_48&v=1606" alt="Xerath"></div><span class="champ-name">Xerath</span> <span class="kda kda-avg">2.27</span> <span class="champ-games">5G</span></div>
+            <div class="champ-item"><div class="champ-icon"><img src="https://opgg-static.akamaized.net/meta/images/lol/16.6.1/champion/Lux.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_png,w_48,h_48&v=1606" alt="Lux"></div><span class="champ-name">Lux</span> <span class="kda kda-bad">1.75</span> <span class="champ-games">2G</span></div>
+            <div class="champ-item"><div class="champ-icon"><img src="https://opgg-static.akamaized.net/meta/images/lol/16.6.1/champion/Darius.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_png,w_48,h_48&v=1606" alt="Darius"></div><span class="champ-name">Darius</span> <span class="kda kda-avg">2.17</span> <span class="champ-games">1G</span></div>
+          </div></td>
+          <td><span class="winrate wr-low">29%</span><br><small style="color:#555">5W 12L</small></td>
+          <td><div class="mastery-list">
+            <span class="mastery-chip">Yasuo <span class="pts">386K</span></span>
+            <span class="mastery-chip">Lee Sin <span class="pts">236K</span></span>
+            <span class="mastery-chip">Jinx <span class="pts">145K</span></span>
+          </div></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/The%20Best%20AD%20-VN2" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">X&uacute;c x&iacute;ch c&oacute; kemm</div></td>
+          <td><span class="rank-badge rank-unranked">--</span></td>
+          <td><span class="no-data">Click OP.GG to view</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/X%C3%BAc%20x%C3%ADch%20c%C3%B3%20kemm%20-vn2" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">Ch&#7881; y&ecirc;u m&igrave;nh ems</div></td>
+          <td><span class="rank-badge rank-unranked">--</span></td>
+          <td><span class="no-data">Click OP.GG to view</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/Ch%E1%BB%89%20y%C3%AAu%20m%C3%ACnh%20ems%20-0804" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">VANH D&#7884;N L&Uacute;A</div></td>
+          <td><span class="rank-badge rank-unranked">--</span></td>
+          <td><span class="no-data">Click OP.GG to view</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/VANH%20D%E1%BB%8CN%20L%C3%9AA%20-A1CKM" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">Th&egrave;m M&igrave; Cay</div></td>
+          <td><span class="rank-badge rank-unranked">--</span></td>
+          <td><span class="no-data">Click OP.GG to view</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/Th%C3%A8m%20M%C3%AC%20Cay-6498" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">PDNghyax3nghya</div></td>
+          <td><span class="rank-badge rank-unranked">--</span></td>
+          <td><span class="no-data">Click OP.GG to view</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/PDNghyax3nghya-VN2" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+<!-- ============ UBCK ============ -->
+<div class="team-section team-ubck" data-team="ubck">
+  <div class="team-header" onclick="toggleTeam(this)">
+    <div class="team-name"><span class="team-badge">UB</span> UBCK</div>
+    <div class="team-meta"><span>5 players</span></div>
+    <span class="team-toggle">&#9660;</span>
+  </div>
+  <div class="team-body">
+    <div class="scroll-hint">
+    <table class="player-table">
+      <thead><tr>
+        <th>Player</th><th>Rank</th><th>Top Champions (KDA)</th><th>Win Rate</th><th>Mastery</th><th>OP.GG</th>
+      </tr></thead>
+      <tbody>
+        <tr class="player-row">
+          <td><div class="player-name">Coldchew <span class="lvl">Lv.169</span></div></td>
+          <td><span class="rank-badge rank-unranked">Unranked</span><br><small style="color:#555">Prev: Emerald 1</small></td>
+          <td><div class="champ-list">
+            <div class="champ-item"><div class="champ-icon"><img src="https://opgg-static.akamaized.net/meta/images/lol/16.6.1/champion/Graves.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_png,w_48,h_48&v=1606" alt="Graves"></div><span class="champ-name">Graves</span> <span class="kda kda-avg">2.14</span> <span class="champ-games">1G</span></div>
+          </div></td>
+          <td><span class="winrate wr-low">0%</span><br><small style="color:#555">0W 1L</small></td>
+          <td><div class="mastery-list">
+            <span class="mastery-chip">Ekko <span class="pts">115K</span></span>
+            <span class="mastery-chip">Graves <span class="pts">99K</span></span>
+            <span class="mastery-chip">Master Yi <span class="pts">40K</span></span>
+          </div></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/Coldchew-vn2" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">M H 301 <span class="lvl">Lv.528</span></div></td>
+          <td><span class="rank-badge rank-unranked">Unranked</span><br><small style="color:#555">Prev: Plat 3</small></td>
+          <td><div class="champ-list">
+            <div class="champ-item"><div class="champ-icon"><img src="https://opgg-static.akamaized.net/meta/images/lol/16.6.1/champion/Kaisa.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_png,w_48,h_48&v=1606" alt="Kai'Sa"></div><span class="champ-name">Kai'Sa</span> <span class="kda kda-good">3.92</span> <span class="champ-games">3G</span></div>
+            <div class="champ-item"><div class="champ-icon"><img src="https://opgg-static.akamaized.net/meta/images/lol/16.6.1/champion/Ezreal.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_png,w_48,h_48&v=1606" alt="Ezreal"></div><span class="champ-name">Ezreal</span> <span class="kda kda-good">3.50</span> <span class="champ-games">1G</span></div>
+          </div></td>
+          <td><span class="winrate wr-high">64%</span><br><small style="color:#555">7W 4L recent</small></td>
+          <td><div class="mastery-list">
+            <span class="mastery-chip">Ezreal <span class="pts">196K</span></span>
+            <span class="mastery-chip">Kai'Sa <span class="pts">164K</span></span>
+            <span class="mastery-chip">Jax <span class="pts">160K</span></span>
+          </div></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/M%20H%20301-301" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">AVG Enel</div></td>
+          <td><span class="rank-badge rank-unranked">--</span></td>
+          <td><span class="no-data">Click OP.GG to view</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/AVG%20Enel-vn2" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">FacherND001</div></td>
+          <td><span class="rank-badge rank-unranked">--</span></td>
+          <td><span class="no-data">Click OP.GG to view</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/FacherND001-vn2" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">May31st</div></td>
+          <td><span class="rank-badge rank-unranked">--</span></td>
+          <td><span class="no-data">Click OP.GG to view</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/May31st-9999" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+<!-- ============ Trụ là Win ============ -->
+<div class="team-section team-trulawin" data-team="trulawin">
+  <div class="team-header" onclick="toggleTeam(this)">
+    <div class="team-name"><span class="team-badge">TW</span> Tr&#7909; l&agrave; Win</div>
+    <div class="team-meta"><span>7 players</span></div>
+    <span class="team-toggle">&#9660;</span>
+  </div>
+  <div class="team-body">
+    <div class="scroll-hint">
+    <table class="player-table">
+      <thead><tr>
+        <th>Player</th><th>Rank</th><th>Top Champions (KDA)</th><th>Win Rate</th><th>Mastery</th><th>OP.GG</th>
+      </tr></thead>
+      <tbody>
+        <tr class="player-row">
+          <td><div class="player-name">NONE</div></td>
+          <td><span class="rank-badge rank-unranked">--</span></td>
+          <td><span class="no-data">Click OP.GG to view</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/NONE-MOON" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">&Acirc;m H&#432; D&#432;&#417;ng Th&#7921;c</div></td>
+          <td><span class="rank-badge rank-unranked">--</span></td>
+          <td><span class="no-data">Click OP.GG to view</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/%C3%82m%20H%C6%B0%20D%C6%B0%C6%A1ng%20Th%E1%BB%B1c-2911" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">GumayuSon</div></td>
+          <td><span class="rank-badge rank-unranked">--</span></td>
+          <td><span class="no-data">Click OP.GG to view</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/GumayuSon-GMS" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">Bear1</div></td>
+          <td><span class="rank-badge rank-unranked">--</span></td>
+          <td><span class="no-data">Click OP.GG to view</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/Bear1-6969" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">vuvantrung9876</div></td>
+          <td><span class="rank-badge rank-unranked">--</span></td>
+          <td><span class="no-data">Click OP.GG to view</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/vuvantrung9876-vn2" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">G&#7841;o tr&#259;m c&#7911;</div></td>
+          <td><span class="rank-badge rank-unranked">--</span></td>
+          <td><span class="no-data">Click OP.GG to view</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/G%E1%BA%A1o%20tr%C4%83m%20c%E1%BB%A7-thanh" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+<!-- ============ Top1 ============ -->
+<div class="team-section team-top1" data-team="top1">
+  <div class="team-header" onclick="toggleTeam(this)">
+    <div class="team-name"><span class="team-badge">T1</span> Top1</div>
+    <div class="team-meta"><span>6 players</span></div>
+    <span class="team-toggle">&#9660;</span>
+  </div>
+  <div class="team-body">
+    <div class="scroll-hint">
+    <table class="player-table">
+      <thead><tr>
+        <th>Player</th><th>Rank</th><th>Top Champions (KDA)</th><th>Win Rate</th><th>Mastery</th><th>OP.GG</th>
+      </tr></thead>
+      <tbody>
+        <tr class="player-row">
+          <td><div class="player-name">I am sky</div></td>
+          <td><span class="rank-badge rank-unranked">--</span></td>
+          <td><span class="no-data">Click OP.GG to view</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/I%20am%20sky-9265" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">B&egrave;o T&uacute;ng</div></td>
+          <td><span class="rank-badge rank-unranked">--</span></td>
+          <td><span class="no-data">Click OP.GG to view</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/B%C3%A8o%20T%C3%BAng-2311" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">C&acirc;n 5 c&acirc;n 7</div></td>
+          <td><span class="rank-badge rank-unranked">--</span></td>
+          <td><span class="no-data">Click OP.GG to view</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/C%C3%A2n%205%20c%C3%A2n%207-2901" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">18th January</div></td>
+          <td><span class="rank-badge rank-unranked">--</span></td>
+          <td><span class="no-data">Click OP.GG to view</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/18th%20January-Beta" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">350ug x&eacute; &dcirc;&ocirc;i</div></td>
+          <td><span class="rank-badge rank-unranked">--</span></td>
+          <td><span class="no-data">Click OP.GG to view</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/350ug%20x%C3%A9%20%C4%91%C3%B4i-2707" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+        <tr class="player-row">
+          <td><div class="player-name">killic</div></td>
+          <td><span class="rank-badge rank-unranked">--</span></td>
+          <td><span class="no-data">Click OP.GG to view</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><span class="no-data">--</span></td>
+          <td><a class="opgg-link" href="https://www.op.gg/summoners/vn/killic-vn2" target="_blank">op.gg &#8599;</a></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+function toggleTeam(header) {
+  header.parentElement.classList.toggle('collapsed');
+}
+
+function filterTeam(evt, team) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  evt.currentTarget.classList.add('active');
+  document.querySelectorAll('.team-section').forEach(s => {
+    if (team === 'all' || s.dataset.team === team) {
+      s.style.display = '';
+      s.classList.remove('collapsed');
+    } else {
+      s.style.display = 'none';
+    }
+  });
+}
+
+/* ── Load data from JSON and initialize S2025 rows ── */
+let playerDataMap = {};
+
+const ICON_BASE = 'https://opgg-static.akamaized.net/meta/images/lol/16.6.1/champion/';
+const ICON_SUFFIX = '.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_png,w_48,h_48&v=1606';
+
+const champImg = icon => `${ICON_BASE}${icon}${ICON_SUFFIX}`;
+
+const renderS2025 = data => {
+  if (!data.champions || data.champions.length === 0) {
+    return `<span style="color:#555;font-size:0.8rem">No 2025 data available</span>`;
+  }
+
+  const champsHtml = data.champions.map(c => `
+    <div class="champ-item">
+      <div class="champ-icon"><img src="${champImg(c.iconName)}" alt="${c.name}"></div>
+      <span class="champ-name">${c.name}</span>
+      <span class="kda ${c.kdaClass}">${c.kda.toFixed(2)}</span>
+      <span style="color:#999;font-size:0.7rem">${c.winrate}%</span>
+      <span class="champ-games">${c.games}G</span>
+    </div>`).join('');
+
+  const masteryHtml = data.mastery && data.mastery.length > 0 
+    ? data.mastery.map(m => `<span class="mastery-chip">${m.name} <span class="pts">${m.points}</span></span>`).join('')
+    : '';
+
+  return `
+    <span class="s2025-season-tag">S·2025</span>
+    <div class="s2025-block">
+      <div class="s2025-block-title">Rank</div>
+      <span class="rank-badge ${data.rankClass}">${data.rank}</span>
+    </div>
+    <div class="s2025-block">
+      <div class="s2025-block-title">Top Champs · KDA · WR</div>
+      <div class="champ-list">${champsHtml}</div>
+    </div>
+    <div class="s2025-block">
+      <div class="s2025-block-title">Win Rate</div>
+      <span class="winrate ${data.overallWrClass}">${data.overallWr}%</span>
+      <br><small style="color:#555">${data.overallWrRecord}</small>
+    </div>
+    ${masteryHtml ? `<div class="s2025-block">
+      <div class="s2025-block-title">Mastery</div>
+      <div class="mastery-list">${masteryHtml}</div>
+    </div>` : ''}`;
+};
+
+const fetchPlayerData = async () => {
+  try {
+    const response = await fetch('lol_data.json');
+    const data = await response.json();
+    
+    // Build map: normalize player names to data
+    data.players.forEach(player => {
+      playerDataMap[player.name] = player.seasons;
+    });
+    
+    initS2025Rows();
+  } catch (error) {
+    console.error('Error loading player data:', error);
+    // Fallback: initialize without data
+    initS2025Rows();
+  }
+};
+
+const initS2025Rows = () => {
+  document.querySelectorAll('.player-row').forEach(row => {
+    const nameEl = row.querySelector('.player-name');
+    if (!nameEl) return;
+
+    const textNode = [...nameEl.childNodes].find(n => n.nodeType === Node.TEXT_NODE);
+    const playerName = textNode ? textNode.textContent.trim() : '';
+    
+    // Try to find player data with exact and normalized matching
+    const data2025 = playerDataMap[playerName] && playerDataMap[playerName]['2025']
+      ? playerDataMap[playerName]['2025']
+      : null;
+    
+    if (!data2025) return;
+
+    const cols = row.querySelectorAll('td').length;
+
+    const detailTr = document.createElement('tr');
+    detailTr.className = 's2025-detail-row';
+    const detailTd = document.createElement('td');
+    detailTd.colSpan = cols;
+
+    const panel = document.createElement('div');
+    panel.className = 's2025-panel';
+    panel.innerHTML = renderS2025(data2025);
+
+    detailTd.appendChild(panel);
+    detailTr.appendChild(detailTd);
+    row.after(detailTr);
+  });
+};
+
+document.addEventListener('DOMContentLoaded', fetchPlayerData);
+</script>
+
+</body>
+</html>
