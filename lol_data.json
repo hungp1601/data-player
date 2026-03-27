@@ -1163,31 +1163,61 @@
       "opggUrl": "https://www.op.gg/summoners/vn/%C3%82m%20H%C6%B0%20D%C6%B0%C6%A1ng%20Th%E1%BB%B1c-2911",
       "seasons": {
         "2026": {
-          "rank": "--",
-          "rankClass": "rank-unranked",
-          "champions": [],
-          "overallWr": "--",
-          "mastery": []
-        },
-        "2025": {
-          "rank": "Platinum 2",
-          "rankClass": "rank-platinum",
+          "rank": "Gold 3 (Flex)",
+          "rankClass": "rank-gold",
           "champions": [
             {
-              "name": "Orianna",
-              "iconName": "Orianna",
-              "kda": 2.85,
+              "name": "Ezreal",
+              "iconName": "Ezreal",
+              "kda": 2.73,
               "kdaClass": "kda-avg",
-              "games": 22,
-              "wins": 12,
-              "losses": 10,
-              "winrate": 55
+              "games": 11,
+              "wins": 4,
+              "losses": 7,
+              "winrate": 36
+            },
+            {
+              "name": "Caitlyn",
+              "iconName": "Caitlyn",
+              "kda": 2.92,
+              "kdaClass": "kda-avg",
+              "games": 6,
+              "wins": 4,
+              "losses": 2,
+              "winrate": 67
+            },
+            {
+              "name": "Varus",
+              "iconName": "Varus",
+              "kda": 1.82,
+              "kdaClass": "kda-bad",
+              "games": 5,
+              "wins": 1,
+              "losses": 4,
+              "winrate": 20
             }
           ],
-          "overallWr": 52,
-          "overallWrRecord": "50W 45L",
-          "overallWrClass": "wr-mid",
-          "mastery": [{ "name": "Orianna", "points": "210K" }]
+          "overallWr": 44,
+          "overallWrRecord": "28W 36L",
+          "overallWrClass": "wr-low",
+          "mastery": [
+            { "name": "Yasuo", "points": "199K" },
+            { "name": "Jinx", "points": "167K" },
+            { "name": "Zed", "points": "137K" }
+          ]
+        },
+        "2025": {
+          "rank": "Silver 3 (Solo) / Platinum 4 (Flex)",
+          "rankClass": "rank-platinum",
+          "champions": [],
+          "overallWr": "--",
+          "overallWrRecord": "--",
+          "overallWrClass": "wr-low",
+          "mastery": [
+            { "name": "Yasuo", "points": "199K" },
+            { "name": "Jinx", "points": "167K" },
+            { "name": "Zed", "points": "137K" }
+          ]
         }
       }
     },
